@@ -57,14 +57,19 @@
 #define DEL_LED_XX_BLI      500ul
 #define DEL_LED_XX_MIN      0ul
 
+#define LED_ON      GPIO_PIN_SET
+#define LED_OFF     GPIO_PIN_RESET
+
 /********************** internal data declaration ****************************/
 const task_actuator_cfg_t task_actuator_cfg_list[] = {
-    {ID_LED_A, LED_A_PORT, LED_A_PIN, LED_A_ON, LED_A_OFF, DEL_LED_XX_BLI, DEL_LED_XX_PUL}
+    {ID_LED_A, LED_A_GPIO_Port, LED_A_Pin, LED_ON, LED_OFF, DEL_LED_XX_BLI, DEL_LED_XX_PUL},
+    {ID_LED_B, LED_B_GPIO_Port, LED_B_Pin, LED_ON, LED_OFF, DEL_LED_XX_BLI, DEL_LED_XX_PUL}
 };
 
 #define ACTUATOR_CFG_QTY (sizeof(task_actuator_cfg_list)/sizeof(task_actuator_cfg_t))
 
 task_actuator_dta_t task_actuator_dta_list[] = {
+    {DEL_LED_XX_MIN, ST_LED_XX_OFF, EV_LED_XX_NOT_BLINK, false},
     {DEL_LED_XX_MIN, ST_LED_XX_OFF, EV_LED_XX_NOT_BLINK, false}
 };
 

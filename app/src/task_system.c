@@ -200,6 +200,7 @@ void task_system_statechart(void)
             {
                 p_task_system_dta->state = ST_SYS_ACTIVE_03;
                 put_event_task_actuator(EV_LED_XX_ON, ID_LED_A);
+                put_event_task_actuator(EV_LED_XX_ON, ID_LED_B);
             }
 
             if (DEL_SYS_MIN < p_task_system_dta->tick) {
@@ -250,6 +251,7 @@ void task_system_statechart(void)
             {
                 p_task_system_dta->state = ST_SYS_IDLE;
                 put_event_task_actuator(EV_LED_XX_OFF, ID_LED_A);
+                put_event_task_actuator(EV_LED_XX_OFF, ID_LED_B);
             }
 
             if (DEL_SYS_MIN < p_task_system_dta->tick) {
